@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    background-image: url("https://imgs.search.brave.com/7K8hVYzoNuxJx4x9BzmsHx0u3iRSUBise2cehuKPPm4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS84NS84/NC9KVUtPejMucG5n");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+}
+
+.login-container{
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 40vw;
+    height: 40vh;
+}
+
+
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2.5vw;
+}
+.login-container label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+.login-container input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.login-container button {
+    width: 50%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+}
+.login-container a {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+.login-container button:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        width: 80vw;
+        height: auto;
+    }
+
+    .login-container h1 {
+        font-size: 6vw;
+    }
+    
+    .login-container label {
+        font-size: 4vw;
+    }
+
+    .login-container input {
+        font-size: 4vw;
+    }
+
+    .login-container button {
+        font-size: 4vw;
+    }
+
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    border-color: gold; /*Que la orden dorada nos guie */
+    outline: none;
+    box-shadow: 0 0 5px rgba(185, 183, 39, 0.5);
+}

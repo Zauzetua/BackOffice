@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    background-image: url("https://imgs.search.brave.com/7K8hVYzoNuxJx4x9BzmsHx0u3iRSUBise2cehuKPPm4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS84NS84/NC9KVUtPejMucG5n");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+}
+
+.home-container{
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50vw;
+    min-height: 50vh;
+    text-align: center;
+}
+
+.home-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2.5vw;
+}
+
+.welcome-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.welcome-content p {
+    color: #555;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 60%;
+}
+
+.btn-primary, .btn-secondary {
+    width: 100%;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    color: white;
+    border: 2px solid #28a745;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+}
+
+.btn-secondary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.user-info p {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.user-info span {
+    font-weight: bold;
+    color: #28a745;
+}
+
+.logout-link {
+    color: #dc3545;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .home-container {
+        width: 90vw;
+        height: auto;
+        padding: 15px;
+    }
+
+    .home-container h1 {
+        font-size: 7vw;
+    }
+    
+    .welcome-content p {
+        font-size: 5vw;
+    }
+
+    .action-buttons {
+        width: 100%;
+    }
+
+    .btn-primary, .btn-secondary {
+        font-size: 5vw;
+        padding: 12px;
+    }
+
+    .user-info p {
+        font-size: 4vw;
+    }
+
+    .logout-link {
+        font-size: 4vw;
+    }
+}
