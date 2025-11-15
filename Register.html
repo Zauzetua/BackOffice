@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="styles/register.css">
+    <script  defer src="scripts/Register.js"></script>
 </head>
 
 <body>
     <main>
         <div class="register-container">
             <h1>Registro</h1>
-            <form action="#" method="get">
+            <form action="#" method="get" id="form-register">
                 <label for="username">Usuario:</label>
                 <input type="text" id="username" name="username" required min="6">
 
@@ -20,12 +21,12 @@
                 <input type="email" id="email" name="email" required>
 
                 <label for="itson-id">Itson ID:</label>
-                <input type="number" id="itson-id" name="itson-id" required min="6" max="6">
+                <input type="number" id="itson-id" name="itson-id" required>
 
                 <label for="password">Contraseña:</label>
                 <input type="password" id="password" name="password" required min="6">
 
-                <button type="submit">Registrarse</button>
+                <button type="submit" id="boton-registrar">Registrarse</button>
                 <a href="Login.html">¿Ya tienes cuenta? Inicia sesion aqui</a>
             </form>
         </div>

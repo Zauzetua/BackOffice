@@ -1,33 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="styles/Home.css">
+    <script defer src="scripts/Home.js"></script>
 </head>
+
 <body>
+    <header>
+        <h1>Gestion de proyectos para Portafolio</h1>
+        <button onclick="LogOut()">Cerrar Sesion</button>
+    </header>
     <main>
-        <div class="home-container">
-            <h1>Bienvenido Sinluz</h1>
-            <div class="welcome-content">
-                <p>Viva Powerwolf</p>
-                <div class="action-buttons">
-                    <a href="#" class="btn-primary">Boton 1 jeje</a>
-                    <a href="#" class="btn-secondary">Boton 2 we</a>
-                    <a href="#" class="btn-secondary">Powerwolf</a>
+        <div class="main-container">
+            <div class="proyectos-contenedor">
+                <h2>Proyectos</h2>
+                <div id="proyectos-lista">
+                    <!-- Se cargaran por la API-->
+                    <div class="proyecto-item">
+                        <input type="hidden" class="proyecto-id" value="1">
+                        <h3>Proyecto de Ejemplo 1</h3>
+                        <p class="descripcion">Descripcion del proyecto de ejemplo.</p>
+                        <p class="tecnologias"><strong>Tecnologías:</strong> HTML, CSS, JavaScript</p>
+
+                        <a href="#" class="repo-link" target="_blank">Repositorio</a>
+
+                        <div class="acciones">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-eliminar">Eliminar</button>
+                        </div>
+                    </div>
+                    <div class="proyecto-item">
+                        <input type="hidden" class="proyecto-id" value="2">
+                        <h3>Proyecto de Ejemplo 2</h3>
+                        <p class="descripcion">Descripcion del proyecto de ejemplo.</p>
+                        <p class="tecnologias"><strong>Tecnologías:</strong> HTML, CSS, JavaScript</p>
+
+                        <a href="#" class="repo-link" target="_blank">Repositorio</a>
+
+                        <div class="acciones">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-eliminar">Eliminar</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="user-info">
-                    <a href="Login.html" class="logout-link">Cerrar Sesion</a>
-                </div>
+                <button id="agregar-proyecto-btn">Agregar Proyecto</button>
             </div>
         </div>
     </main>
-    <script>
-        //Se pide esto xd
-        window.location.href = "Login.html";
-    </script>
+
+
+    <!--Modal para agregar nuevo proyecto, capaz tambien para editar-->
+    <div id="modal-proyecto" class="modal">
+        <div class="modal-content">
+            <h3>Nuevo Proyecto</h3>
+            <form action="" id="modal-form">
+                <input type="hidden" id="proyecto-id">
+                <label>Título</label>
+                <input type="text" id="titulo-proyecto">
+
+                <label>Descripcion</label>
+                <textarea id="descripcion-proyecto"></textarea>
+
+                <label>Tecnologias (separadas por coma)</label>
+                <input type="text" id="tecnologias-proyecto">
+
+                <label>Repositorio (URL)</label>
+                <input type="text" id="repo-proyecto">
+
+                <div class="modal-buttons">
+                    <button type="submit" id="guardar-proyecto-btn">Guardar</button>
+                    <button id="cerrar-modal-btn">Cancelar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
 </body>
+
 </html>
-
-

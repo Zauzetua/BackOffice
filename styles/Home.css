@@ -6,7 +6,7 @@
 }
 
 main{
-    background-image: url("https://imgs.search.brave.com/7K8hVYzoNuxJx4x9BzmsHx0u3iRSUBise2cehuKPPm4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS84NS84/NC9KVUtPejMucG5n");
+    background-image: url("https://imgs.search.brave.com/mLLueSvfVM4W6ClA_uzuAUhxws3JP4OEZ3dtADqmLcQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5hbHRjaGFyLmNv/bS9wcm9kL2ltYWdl/cy85NDBfNTMwL2dt/LWQ5YWNhMDcyLTJm/MmQtNDlhNS1hZTI1/LTBlMjUwNDkyMTEz/NS1lbGRlbi1yaW5n/LTRrLXNjcmVlbnNo/b3QuanBn");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -14,125 +14,354 @@ main{
     flex-direction: row;
 }
 
-.home-container{
-    margin: auto;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 50vw;
-    min-height: 50vh;
-    text-align: center;
-}
-
-.home-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 2.5vw;
-}
-
-.welcome-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-}
-
-.welcome-content p {
-    color: #555;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-.action-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 60%;
-}
-
-.btn-primary, .btn-secondary {
+header{
+    height: 60px;
     width: 100%;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header h1{
+    font-size: 24px;
+}
+
+header button{
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 16px;
     cursor: pointer;
     font-size: 16px;
+}
+
+header button:hover{
+    background-color: #777;
+}
+
+.main-container{
+    display: flex;
+    margin: auto;
+}
+
+/*La cosa blanca donde va todo*/
+.proyectos-contenedor{ 
+    background-color: white;
+    height: 60vh;
+    width: 80vw;
+    border-radius: 10px;
+    opacity: 80%;
+
+}
+
+.proyectos-contenedor h2{
     text-align: center;
-    transition: background-color 0.3s ease;
+    padding: 20px 0;
+}
+
+#proyectos-lista{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding:20px;
+}
+#agregar-proyecto-btn{
     display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#agregar-proyecto-btn:hover{
+    background-color: #ddd;
 }
 
-.btn-primary {
-    background-color: #28a745;
-    color: white;
-    border: 2px solid #28a745;
+.proyecto-item {
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    padding: 15px;
+    width: 230px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.12);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform .15s ease, box-shadow .15s ease;
 }
 
-.btn-primary:hover {
-    background-color: #218838;
-    border-color: #218838;
+
+.proyecto-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.18);
 }
 
-.btn-secondary {
-    background-color: transparent;
-    color: #007bff;
-    border: 2px solid #007bff;
+.proyecto-item h3 {
+    margin: 0;
+    font-size: 18px;
 }
 
-.btn-secondary:hover {
-    background-color: #007bff;
-    color: white;
-}
-
-.user-info p {
-    color: #333;
-    font-size: 14px;
-    margin-bottom: 8px;
-}
-
-.user-info span {
-    font-weight: bold;
-    color: #28a745;
-}
-
-.logout-link {
-    color: #dc3545;
+.repo-link {
+    color: #2c6bed;
     text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
+    margin-top: 5px;
 }
 
-@media (max-width: 480px) {
-    .home-container {
-        width: 90vw;
+.repo-link:hover {
+    text-decoration: underline;
+}
+
+
+.acciones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+
+.acciones button {
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background .15s ease, transform .1s ease;
+}
+
+.btn-editar {
+    background: #ffd966;
+}
+
+.btn-editar:hover {
+    background: #f4c842;
+    transform: scale(1.05);
+}
+
+
+.btn-eliminar {
+    background: #ff6b6b;
+    color: white;
+}
+
+.btn-eliminar:hover {
+    background: #e55656;
+    transform: scale(1.05);
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px); 
+    animation: fadeIn .15s ease-out;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+.modal-content {
+    background: #ffffff;
+    padding: 25px;
+    width: 380px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transform: scale(0.95);
+    animation: popIn .18s ease-out forwards;
+}
+
+
+@keyframes popIn {
+    to { transform: scale(1); }
+}
+
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 14px;
+    transition: border-color .15s ease;
+}
+
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+    border-color: #6a9cff;
+    outline: none;
+}
+
+
+.modal-content h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.modal-buttons button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background .15s ease, transform .1s ease;
+}
+
+#guardar-proyecto-btn {
+    background-color: #4a8bff;
+    color: white;
+}
+
+#guardar-proyecto-btn:hover {
+    background-color: #3a75d6;
+    transform: scale(1.05);
+}
+
+#cerrar-modal-btn {
+    background-color: #e4e4e4;
+}
+
+#cerrar-modal-btn:hover {
+    background-color: #d4d4d4;
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
         height: auto;
-        padding: 15px;
+        padding: 10px;
+        gap: 8px;
+        text-align: center;
     }
 
-    .home-container h1 {
-        font-size: 7vw;
-    }
-    
-    .welcome-content p {
-        font-size: 5vw;
+    header h1 {
+        font-size: 20px;
     }
 
-    .action-buttons {
+    header button {
+        width: 100%;
+        font-size: 15px;
+    }
+
+
+    .main-container {
+        margin-top: 90px; 
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    .proyectos-contenedor {
+        width: 95vw;
+        height: auto;
+        min-height: 70vh;
+        padding-bottom: 20px;
+        opacity: 1; 
+    }
+
+
+    #proyectos-lista {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .proyecto-item {
         width: 100%;
     }
 
-    .btn-primary, .btn-secondary {
-        font-size: 5vw;
+
+    #agregar-proyecto-btn {
+        width: 90%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+
+    .modal-content {
+        width: 92%;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    .modal-content h3 {
+        font-size: 18px;
+    }
+
+
+    .modal-content input,
+    .modal-content textarea {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+
+    .modal-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-buttons button {
+        width: 100%;
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+
+    .proyectos-contenedor h2 {
+        font-size: 18px;
+        margin-top: 5px;
+    }
+
+    .proyecto-item h3 {
+        font-size: 16px;
+    }
+
+    .proyecto-item {
         padding: 12px;
     }
 
-    .user-info p {
-        font-size: 4vw;
-    }
-
-    .logout-link {
-        font-size: 4vw;
+    .acciones button {
+        padding: 8px 12px;
+        font-size: 13px;
     }
 }
+
+
