@@ -19,33 +19,7 @@
             <div class="proyectos-contenedor">
                 <h2>Proyectos</h2>
                 <div id="proyectos-lista">
-                    <!-- Se cargaran por la API-->
-                    <div class="proyecto-item">
-                        <input type="hidden" class="proyecto-id" value="1">
-                        <h3>Proyecto de Ejemplo 1</h3>
-                        <p class="descripcion">Descripcion del proyecto de ejemplo.</p>
-                        <p class="tecnologias"><strong>Tecnologías:</strong> HTML, CSS, JavaScript</p>
-
-                        <a href="#" class="repo-link" target="_blank">Repositorio</a>
-
-                        <div class="acciones">
-                            <button class="btn-editar">Editar</button>
-                            <button class="btn-eliminar">Eliminar</button>
-                        </div>
-                    </div>
-                    <div class="proyecto-item">
-                        <input type="hidden" class="proyecto-id" value="2">
-                        <h3>Proyecto de Ejemplo 2</h3>
-                        <p class="descripcion">Descripcion del proyecto de ejemplo.</p>
-                        <p class="tecnologias"><strong>Tecnologías:</strong> HTML, CSS, JavaScript</p>
-
-                        <a href="#" class="repo-link" target="_blank">Repositorio</a>
-
-                        <div class="acciones">
-                            <button class="btn-editar">Editar</button>
-                            <button class="btn-eliminar">Eliminar</button>
-                        </div>
-                    </div>
+                    <!-- Los proyectos se cargaran aqui dinamicamente -->
                 </div>
                 <button id="agregar-proyecto-btn">Agregar Proyecto</button>
             </div>
@@ -63,13 +37,13 @@
                 <input type="text" id="titulo-proyecto">
 
                 <label>Descripcion</label>
-                <textarea id="descripcion-proyecto"></textarea>
+                <textarea id="descripcion-proyecto" minlength="3"></textarea>
 
                 <label>Tecnologias (separadas por coma)</label>
                 <input type="text" id="tecnologias-proyecto">
 
                 <label>Repositorio (URL)</label>
-                <input type="text" id="repo-proyecto">
+                <input type="text" id="repo-proyecto" minlength="10">
 
                 <div class="modal-buttons">
                     <button type="submit" id="guardar-proyecto-btn">Guardar</button>
@@ -77,6 +51,18 @@
                 </div>
             </form>
 
+        </div>
+    </div>
+
+    <!--Modal confirmacion-->
+    <div id="modal-confirmacion" class="modal">
+        <div class="modal-content">
+            <h3>Confirmacion</h3>
+            <p id="mensaje-confirmacion">¿Estas seguro de que deseas eliminar este proyecto?</p>
+            <div class="modal-buttons">
+                <button id="confirmar-eliminacion-btn">Si</button>
+                <button id="cancelar-eliminacion-btn">No</button>
+            </div>
         </div>
     </div>
 </body>
