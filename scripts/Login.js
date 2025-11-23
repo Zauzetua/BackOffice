@@ -45,6 +45,8 @@ form.addEventListener("submit", (e) => __awaiter(this, void 0, void 0, function*
     try {
         var result = yield Login(loginData);
         saveToken(result.token);
+        const { userPublicData } = result;  
+        localStorage.setItem("user", userPublicData._id);
         window.location.href = "Home.html";
     }
     catch (err) {

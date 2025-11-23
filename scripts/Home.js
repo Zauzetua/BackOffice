@@ -2,6 +2,7 @@ function ObtenerToken() {
     return localStorage.getItem("authToken");
 }
 const API_BASE = "https://portfolio-api-three-black.vercel.app/api/v1";
+var userId = localStorage.getItem("user");
 
 function LogOut() {
     localStorage.removeItem("authToken");
@@ -13,6 +14,7 @@ function LimpiarModal() {
     document.getElementById("descripcion-proyecto").value = "";
     document.getElementById("tecnologias-proyecto").value = "";
     document.getElementById("repo-proyecto").value = "";
+    document.getElementById("imagenes-proyecto").value = "";
 }
 
 async function ObtenerProyectos() {
@@ -140,6 +142,7 @@ window.addEventListener("load", async () => {
             <p class="proyecto-descripcion">${proyecto.description}</p>
             <p class="proyecto-tecnologias">Tecnologias: ${proyecto.technologies.join(", ")}</p>
             <a href="${proyecto.repository}" class="repo-link" target="_blank">Repositorio</a>
+            <p class="proyecto-imagenes" hidden>Imágenes: ${proyecto.images.join(", ")}</p>
             <button class="btn-editar">Editar</button>
             <button class="btn-eliminar">Eliminar</button>
         `;
@@ -169,12 +172,14 @@ document.getElementById("guardar-proyecto-btn").addEventListener("click", (e) =>
     const description = document.getElementById("descripcion-proyecto").value;
     const technologies = document.getElementById("tecnologias-proyecto").value.split(",");
     const repository = document.getElementById("repo-proyecto").value;
+    const imagenesUrls = document.getElementById("imagenes-proyecto").value.split(",").map(url => url.trim()).filter(url => url);
 
     var payload = {
         title: title,
         description: description,
         technologies: technologies.map(tech => tech.trim()),
-        repository: repository
+        repository: repository,
+        images: imagenesUrls
     };
 
     if (!title.trim() || !description.trim()) {
@@ -223,6 +228,7 @@ document.getElementById("guardar-proyecto-btn").addEventListener("click", (e) =>
                     Tecnologias: ${(createdProject.technologies || []).join(", ")}
                     </p>
                     <a href="${createdProject.repository}" class="repo-link" target="_blank">Repositorio</a>
+                    <p class="proyecto-imagenes" hidden>Imágenes: ${(createdProject.images || []).join(", ")}</p>
                     <button class="btn-editar">Editar</button>
                     <button class="btn-eliminar">Eliminar</button>
                 `;
@@ -247,13 +253,14 @@ document.getElementById("proyectos-lista").addEventListener("click", function (e
         var descripcion = divContenedor.querySelector(".proyecto-descripcion").innerText;
         var tecnologias = divContenedor.querySelector(".proyecto-tecnologias").innerText.replace("Tecnologías:", "").trim();
         var repo = divContenedor.querySelector(".repo-link").href;
-
+        var imagenes = divContenedor.querySelector(".proyecto-imagenes").innerText.replace("Imágenes:", "").trim();
         //Modal cargado
         document.getElementById("titulo-proyecto").value = titulo;
         document.getElementById("proyecto-id").value = proyectoId;
         document.getElementById("descripcion-proyecto").value = descripcion;
         document.getElementById("tecnologias-proyecto").value = tecnologias;
         document.getElementById("repo-proyecto").value = repo;
+        document.getElementById("imagenes-proyecto").value = imagenes;
 
         document.getElementById("modal-proyecto").style.display = "flex";
     }
