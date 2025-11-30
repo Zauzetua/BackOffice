@@ -1,12 +1,54 @@
+:root{
+    --font-family: Arial, Helvetica, sans-serif;
+    /*Sale mejor descargarlas alv, piunchis variables*/
+    --home-bg-image: url("../images/LiurniaFondo.webp");
+
+    /*mucho pinchi color*/
+    --color-header-bg: #333;
+    --color-header-text: #fff;
+    --color-btn-bg: #555;
+    --color-btn-hover: #777;
+    --color-container-bg: #fff;
+    --container-opacity: 0.8;
+    --card-border: #d3d3d3;
+    --card-bg: #fff;
+    --card-shadow: 2px 2px 8px rgba(0,0,0,0.12);
+    --card-shadow-hover: 4px 4px 12px rgba(0,0,0,0.18);
+    --muted: #666;
+    --muted-2: #888;
+    --link-primary: #2c6bed;
+    --edit-bg: #ffd966;
+    --edit-bg-hover: #f4c842;
+    --danger-bg: #ff6b6b;
+    --danger-bg-hover: #e55656;
+    --overlay: rgba(0,0,0,0.55);
+    --modal-bg: #ffffff;
+    --modal-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+    --input-border: #cfcfcf;
+    --focus-border: #6a9cff;
+    --border-top: #f0f0f0;
+
+    --header-height: 60px;
+    --card-width: 230px;
+    --card-height: 280px;
+    --radius-sm: 5px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --modal-width: 380px;
+
+    --transition-fast: .15s;
+    --transition-pop: .18s;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-family);
 }
 
 main{
-    background-image: url("https://imgs.search.brave.com/mLLueSvfVM4W6ClA_uzuAUhxws3JP4OEZ3dtADqmLcQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5hbHRjaGFyLmNv/bS9wcm9kL2ltYWdl/cy85NDBfNTMwL2dt/LWQ5YWNhMDcyLTJm/MmQtNDlhNS1hZTI1/LTBlMjUwNDkyMTEz/NS1lbGRlbi1yaW5n/LTRrLXNjcmVlbnNo/b3QuanBn");
+    background-image: var(--home-bg-image);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -15,10 +57,10 @@ main{
 }
 
 header{
-    height: 60px;
+    height: var(--header-height);
     width: 100%;
-    background-color: #333;
-    color: white;
+    background-color: var(--color-header-bg);
+    color: var(--color-header-text);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,8 +76,8 @@ header h1{
 }
 
 header button{
-    background-color: #555;
-    color: white;
+    background-color: var(--color-btn-bg);
+    color: var(--color-header-text);
     border: none;
     padding: 8px 16px;
     cursor: pointer;
@@ -43,7 +85,7 @@ header button{
 }
 
 header button:hover{
-    background-color: #777;
+    background-color: var(--color-btn-hover);
 }
 
 .main-container{
@@ -53,11 +95,11 @@ header button:hover{
 
 /*La cosa blanca donde va todo*/
 .proyectos-contenedor{ 
-    background-color: white;
+    background-color: var(--color-container-bg);
     height: 60vh;
     width: 80vw;
     border-radius: 10px;
-    opacity: 80%;
+    opacity: calc(var(--container-opacity) * 1);
 
 }
 
@@ -84,23 +126,23 @@ header button:hover{
 }
 
 .proyecto-item {
-    border: 1px solid #d3d3d3;
-    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
     padding: 15px;
-    width: 230px;
-    height: 280px; 
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.12);
-    background: #fff;
+    width: var(--card-width);
+    height: var(--card-height); 
+    box-shadow: var(--card-shadow);
+    background: var(--card-bg);
     display: flex;
     flex-direction: column;
     gap: 8px;
-    transition: transform .15s ease, box-shadow .15s ease;
+    transition: transform var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
 }
 
 
 .proyecto-item:hover {
     transform: translateY(-3px);
-    box-shadow: 4px 4px 12px rgba(0,0,0,0.18);
+    box-shadow: var(--card-shadow-hover);
 }
 
 .proyecto-item h3 {
@@ -119,7 +161,7 @@ header button:hover{
 
 .proyecto-descripcion {
     font-size: 14px;
-    color: #666;
+    color: var(--muted);
     display: -webkit-box;
     -webkit-line-clamp: 3;
     line-clamp: 3;
@@ -134,7 +176,7 @@ header button:hover{
 
 .proyecto-tecnologias {
     font-size: 12px;
-    color: #888;
+    color: var(--muted-2);
     font-style: italic;
     white-space: nowrap;
     overflow: hidden;
@@ -143,7 +185,7 @@ header button:hover{
 }
 
 .repo-link {
-    color: #2c6bed;
+    color: var(--link-primary);
     text-decoration: none;
     font-weight: 600;
     margin-top: 5px;
@@ -159,7 +201,7 @@ header button:hover{
     justify-content: space-between;
     margin-top: auto; 
     padding-top: 10px;
-    border-top: 1px solid #f0f0f0; 
+    border-top: 1px solid var(--border-top); 
 }
 
 
@@ -173,22 +215,22 @@ header button:hover{
 }
 
 .btn-editar {
-    background: #ffd966;
+    background: var(--edit-bg);
 }
 
 .btn-editar:hover {
-    background: #f4c842;
+    background: var(--edit-bg-hover);
     transform: scale(1.05);
 }
 
 
 .btn-eliminar {
-    background: #ff6b6b;
-    color: white;
+    background: var(--danger-bg);
+    color: var(--color-header-text);
 }
 
 .btn-eliminar:hover {
-    background: #e55656;
+    background: var(--danger-bg-hover);
     transform: scale(1.05);
 }
 
@@ -196,11 +238,11 @@ header button:hover{
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: var(--overlay);
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(3px); 
-    animation: fadeIn .15s ease-out;
+    animation: fadeIn var(--transition-fast) ease-out;
 }
 
 
@@ -211,16 +253,16 @@ header button:hover{
 
 
 .modal-content {
-    background: #ffffff;
+    background: var(--modal-bg);
     padding: 25px;
-    width: 380px;
-    border-radius: 12px;
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+    width: var(--modal-width);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--modal-shadow);
     display: flex;
     flex-direction: column;
     gap: 14px;
     transform: scale(0.95);
-    animation: popIn .18s ease-out forwards;
+    animation: popIn var(--transition-pop) ease-out forwards;
 }
 
 
@@ -232,17 +274,17 @@ header button:hover{
 .modal-content input,
 .modal-content textarea {
     width: 100%;
-    border: 1px solid #cfcfcf;
+    border: 1px solid var(--input-border);
     border-radius: 6px;
     padding: 8px;
     font-size: 14px;
-    transition: border-color .15s ease;
+    transition: border-color var(--transition-fast) ease;
 }
 
 
 .modal-content input:focus,
 .modal-content textarea:focus {
-    border-color: #6a9cff;
+    border-color: var(--focus-border);
     outline: none;
 }
 

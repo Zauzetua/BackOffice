@@ -1,12 +1,31 @@
+:root{
+    --font-family: Arial, Helvetica, sans-serif;
+    --register-bg-image: url("../images/EldenRingFondo.webp");
+
+    --auth-container-bg: rgba(255,255,255,0.8);
+    --auth-width: 40vw;
+    --auth-height: 60vh;
+    --auth-radius: 8px;
+    --auth-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+    --text-color: #333;
+    --label-color: #555;
+    --input-border: #ccc;
+    --btn-bg: #28a745;
+    --btn-bg-hover: #218838;
+    --link-color: #007bff;
+    --focus-shadow: 0 0 5px rgba(185,183,39,0.5);
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-family);
 }
 
 main{
-    background-image: url("https://imgs.search.brave.com/7K8hVYzoNuxJx4x9BzmsHx0u3iRSUBise2cehuKPPm4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS84NS84/NC9KVUtPejMucG5n");
+    background-image: var(--register-bg-image);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -16,37 +35,37 @@ main{
 
 .register-container{
     margin: auto;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--auth-container-bg);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 40vw;
-    height: 60vh;
+    border-radius: var(--auth-radius);
+    box-shadow: var(--auth-shadow);
+    width: var(--auth-width);
+    height: var(--auth-height);
 }
 
 .register-container h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--text-color);
     font-size: 2.5vw;
 }
 .register-container label {
     display: block;
     margin-bottom: 8px;
-    color: #555;
+    color: var(--label-color);
     font-weight: bold;
 }
 .register-container input {
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--input-border);
     border-radius: 4px;
 }
 .register-container button {
     width: 50%;
     padding: 10px;
-    background-color: #28a745;
+    background-color: var(--btn-bg);
     color: white;
     border: none;
     border-radius: 4px;
@@ -59,12 +78,12 @@ main{
     display: block;
     text-align: center;
     margin-top: 12px;
-    color: #007bff;
+    color: var(--link-color);
     text-decoration: none;
     font-size: 14px;
 }
 .register-container button:hover {
-    background-color: #218838;
+    background-color: var(--btn-bg-hover);
 }
 
 @media (max-width: 480px) {
@@ -92,7 +111,7 @@ main{
 }
 
 .register-container input:focus{
-    border-color: gold; /*Que la orden dorada nos guie */
+    border-color: gold;
     outline: none;
-    box-shadow: 0 0 5px rgba(185, 183, 39, 0.5);
+    box-shadow: var(--focus-shadow);
 }
