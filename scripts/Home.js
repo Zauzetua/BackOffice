@@ -140,7 +140,7 @@ window.addEventListener("load", async () => {
             <input type="hidden" class="proyecto-id" value="${proyecto._id}">
             <h3>${proyecto.title}</h3>
             <p class="proyecto-descripcion">${proyecto.description}</p>
-            <p class="proyecto-tecnologias">Tecnologias: ${proyecto.technologies.join(", ")}</p>
+            <p class="proyecto-tecnologias"> ${proyecto.technologies.join(", ")}</p>
             <a href="${proyecto.repository}" class="repo-link" target="_blank">Repositorio</a>
             <p class="proyecto-imagenes" hidden>Imágenes: ${proyecto.images.join(", ")}</p>
             <button class="btn-editar">Editar</button>
@@ -201,7 +201,7 @@ document.getElementById("guardar-proyecto-btn").addEventListener("click", (e) =>
                     if (proyectoIdInput.value === editingProjectId) {
                         div.querySelector("h3").innerText = updatedProject.title;
                         div.querySelector(".proyecto-descripcion").innerText = updatedProject.description;
-                        div.querySelector(".proyecto-tecnologias").innerText = "Tecnologias: " + updatedProject.technologies.join(", ");
+                        div.querySelector(".proyecto-tecnologias").innerText = updatedProject.technologies.join(", ");
                         div.querySelector(".repo-link").href = updatedProject.repository;
                         break;
                     }
@@ -225,7 +225,7 @@ document.getElementById("guardar-proyecto-btn").addEventListener("click", (e) =>
                     <h3>${createdProject.title}</h3>
                     <p class="proyecto-descripcion">${createdProject.description}</p>
                     <p class="proyecto-tecnologias">
-                    Tecnologias: ${(createdProject.technologies || []).join(", ")}
+                    ${(createdProject.technologies || []).join(", ")}
                     </p>
                     <a href="${createdProject.repository}" class="repo-link" target="_blank">Repositorio</a>
                     <p class="proyecto-imagenes" hidden>Imágenes: ${(createdProject.images || []).join(", ")}</p>
